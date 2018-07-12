@@ -1,43 +1,39 @@
 var playerHP = document.getElementById("player-hp"),
     monsterHP = document.getElementById("monster-hp"),
-    storyBox = document.getElementById("story-box"),
+    text = document.getElementById("story-box"),
+    storyImage = document.getElementById("story-image"),
     commandBox = document.getElementById("command-box"),
     attackButton = document.getElementById("attack-button"),
     runButton = document.getElementById("run-button");
 
-    var PlayHP = 20,
-        MonstHP = 20;
-        runpages=["run1.html","run2.html"];
+var storyItems = [
+"<p>You Enter a Dark Cave</p>",
+"<p>As you venture deeper, you hear the pitter-patter of ominous footsteps</p>",
+"<p>It's a nasty little rabbit with BIIIIG Teeth</p>" ]; 
 
+var illustration = [
+    "<img src='img/img1.jpg'>",
+    "<img src='img/img2.jpg'>",
+    "<img src='img/img3.jpg'>",
+]
 
-window.onload = playerHP.innerHTML = "Player Hit Points: " + PlayHP,
-                monsterHP.innerHTML= "The Beast's Hit Points: " + MonstHP;
+var PlayHP = 20,
+MonstHP = 20;
+runpages=["run1.html","run2.html"];
 
+setTimeout(function(){
+    text.innerHTML = storyItems[0];
+    storyImage.innerHTML = illustration[0]}, 500);
 
-attackButton.addEventListener("click",function(){
-   attackRoll(); 
-})
+setTimeout(function(){
+    text.innerHTML = storyItems[1];
+    storyImage.innerHTML = illustration[1]}, 4000);
 
-runButton.addEventListener("click",function(){
-    runNow();
-})
-
-var attackRoll = function attackRoll(){
-   var playMinus = getRandomNumber(0,6),
-        monstMinus = getRandomNumber(0,6);
-    PlayHP = PlayHP - playMinus; 
+setTimeout(function(){
+    text.innerHTML = storyItems[2];
+    storyImage.innerHTML = illustration[2];
     playerHP.innerHTML = "Player Hit Points: " + PlayHP;
-    MonstHP = MonstHP - monstMinus;
     monsterHP.innerHTML= "The Beast's Hit Points: " + MonstHP;
-    if (PlayHP <= 0) {
-        window.location = "murder.html";
-     }
-     if (MonstHP <= 0 && PlayHP > 0) {
-        window.locatoin = "victory.html";
-     }
-}
+    attackButton.classList.toggle("toggleon");
+    runButton.classList.toggle("toggleon");}, 7500); 
 
-var runNow = function runNow(){
-    var randy = getRandomNumber(0,1);
-    window.location = runpages[randy];
-}
