@@ -4,7 +4,8 @@ var playerHP = document.getElementById("player-hp"),
     storyImage = document.getElementById("story-image"),
     commandBox = document.getElementById("command-box"),
     attackButton = document.getElementById("attack-button"),
-    runButton = document.getElementById("run-button");
+    runButton = document.getElementById("run-button")
+    hpBox = document.getElementById("hp-box");
 
 var storyItems = [
 "<p>You Enter a Dark Cave</p>",
@@ -27,13 +28,14 @@ setTimeout(function(){
 
 setTimeout(function(){
     text.innerHTML = storyItems[1];
-    storyImage.innerHTML = illustration[1]}, 4000);
+    storyImage.innerHTML = illustration[1]}, 1000);
 
 setTimeout(function(){
     text.innerHTML = storyItems[2];
     storyImage.innerHTML = illustration[2];
-    playerHP.innerHTML = "Player Hit Points: " + PlayHP;
-    monsterHP.innerHTML= "The Beast's Hit Points: " + MonstHP;
+    playerHP.innerHTML = "Player HP <br>" + "<div class='hp-number'>" + PlayHP + "</div>";
+    monsterHP.innerHTML= "Monster HP <br>" + "<div class='hp-number'>" + MonstHP + "</div>";
     attackButton.classList.toggle("toggleon");
-    runButton.classList.toggle("toggleon");}, 7500); 
+    runButton.classList.toggle("toggleon");
+    hpBox.classList.toggle("toggleon")}, 1500); 
 

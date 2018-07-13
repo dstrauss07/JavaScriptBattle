@@ -1,11 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu:400,700');
+*{
+    font-family:'Gaegu', cursive;
+}
 h2 {
     color:blue;
 }
-
 .toggleoff {
     display:none;
 }
-
 .toggleon{
     display:inline;
+}
+.clear{
+    clear:both;
+}
+.hp-number{
+    color:black;
+    font-size: 2em;
+}
+
+#hp-box{
+   text-align:center;
+}
+#player-hp{
+    color:blue;
+    border: black solid 2px;
+    padding:1%;
+    margin:0 15% 0 33%;
+    width: 7%;
+    float:left;
+    font-size: 1.4em;
+}
+#monster-hp{
+    color:red;
+    border: black solid 2px;
+    padding:1%;
+    width: 7%;
+    float:left;
+    font-size: 1.4em;
+}
+
+#story-box{
+    text-align:center;
+}
+
+#story-image img{
+    width:60%;
+    margin-left: 20%;
 }

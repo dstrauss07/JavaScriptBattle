@@ -10,14 +10,14 @@ var attackRoll = function attackRoll(){
 var playMinus = getRandomNumber(0,6),
 monstMinus = getRandomNumber(0,6);
 PlayHP = PlayHP - playMinus; 
-playerHP.innerHTML = "Player Hit Points: " + PlayHP;
+playerHP.innerHTML = "Player HP <br>" + "<div class='hp-number'>" + PlayHP + "</div>";
 MonstHP = MonstHP - monstMinus;
-monsterHP.innerHTML= "The Beast's Hit Points: " + MonstHP;
+monsterHP.innerHTML= "Monster HP <br>" + "<div class='hp-number'>" + MonstHP + "</div>";
 if (PlayHP <= 0) {
 window.location = "murder.html";
 }
 if (MonstHP <= 0 && PlayHP > 0) {
-window.locatoin = "victory.html";
+window.location = "victory.html";
 }
 }
 
