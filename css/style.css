@@ -3,13 +3,29 @@
     font-family:'Gaegu', cursive;
 }
 h2 {
-    color:blue;
+    color:yellow;
+    text-align:center;
+}
+body{
+    background:#191A26;
+}
+p{
+    text-align:center;
+}
+a {
+    color:white;
+}
+a:hover{
+    color:yellow;
 }
 .toggleoff {
     display:none;
 }
 .toggleon{
     display:inline;
+}
+.left{
+    float:left;
 }
 .clear{
     clear:both;
@@ -30,21 +46,57 @@ h2 {
     width: 7%;
     float:left;
     font-size: 1.4em;
+    background:#e2ffd3;
+    font-weight:bold;
 }
 #monster-hp{
-    color:red;
+    color:rgb(255, 2, 15);
     border: black solid 2px;
     padding:1%;
     width: 7%;
     float:left;
     font-size: 1.4em;
+    background:rgb(255, 220, 220);
+    font-weight:bold;
 }
 
 #story-box{
     text-align:center;
+    font-size: 1.5rem;
+    background:rgb(255, 244, 206);
+    width:60%;
+    margin-left:20%;
+    margin-top:2%;
+
 }
 
 #story-image img{
     width:60%;
     margin-left: 20%;
+}
+
+#attack-button {
+    background:red;
+    font-weight:bold;
+    font-size: 1.4rem;
+    margin: 2% 5% 2% 45%;
+}
+#run-button {
+    background:yellow;
+    font-weight:bold;
+    font-size: 1.4rem;
+    margin: 2% 0;
+}
+
+#monster-hit{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    color:white;
+    transform: translate(-50%, -40%);
+}
+
+.finalimage {
+    width:60%;
+    margin-left:20%;
 }
