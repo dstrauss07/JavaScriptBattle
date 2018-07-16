@@ -87,6 +87,12 @@ a:hover{
     font-size: 1.4rem;
     margin: 2% 0;
 }
+#grenade-button {
+    background:green;
+    font-weight:bold;
+    font-size: 1.4rem;
+    margin: 2% 5% 2% 45%;
+}
 
 #monster-hit{
     position: absolute;
