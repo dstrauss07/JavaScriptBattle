@@ -25,7 +25,7 @@ var attackRoll = function attackRoll(){
     if (MonstHP <= 0 && PlayHP > 0) {
         window.location = "victory.html";
     }
-    if (MonstHP <=6 && PlayHP <=6 ){
+    if (MonstHP <=3 && PlayHP <=3 ){
         text.innerHTML = storyItems[3];
         grenadeButton.classList.toggle("toggleon");
         attackButton.classList.remove("toggleon");
