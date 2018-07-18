@@ -31,23 +31,37 @@ var PlayHP = 20,
     MonstHP = 20;
     runpages=["run1.html","run2.html"];
 
- setTimeout(load1, 500);
- setTimeout(load2, 3500);
- setTimeout(load3, 6500);
 
+/*    
+window.onload = function(){
+    loadTransitions([load1, load2, load3],3000);
+}
+var loadTransitions = function loadTransitions(functions){
+    for(var i = 0; i < functions.length; i++){
+        setTimeout(functions[i],timeout);
+    }
+}
+
+*/
+setTimeout(load1, 500);
+setTimeout(load2, 3500);
+setTimeout(load3, 6500);
+
+ 
 
 var dispHP =  function dispHP(){
     playerHP.innerHTML = "Player HP <br>" + "<div class='hp-number'>" + PlayHP + "</div>";
     monsterHP.innerHTML= "Rabbit HP <br>" + "<div class='hp-number'>" + MonstHP + "</div>";
 }
 
-function load1(){
+var load1 = function load1(){
     cave.play();
     text.innerHTML = storyItems[0];
     storyImage.innerHTML = illustration[0];
 }
 
 function load2(){
+    
     footsteps.play();
     text.innerHTML = storyItems[1];
     storyImage.innerHTML = illustration[1];
