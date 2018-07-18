@@ -18,46 +18,41 @@ var storyItems = [
 var illustration = [
     "<img src='img/img1.jpg'>",
     "<img src='img/img2.jpg'>",
-    "<img src='img/img3.jpg'>",
+    "<img src='img/img3.jpg'>"
 ];
 
 var cave = new Audio('mp3/cave.mp3'),
     footsteps = new Audio('mp3/footsteps.mp3'),
-    rabbit = new Audio('mp3/rabbit.mp3')
+    rabbit = new Audio('mp3/rabbit.mp3'),
     sword = new Audio('mp3/sword.mp3');
 
 
 var PlayHP = 20,
-    MonstHP = 20;
+    MonstHP = 20,
     runpages=["run1.html","run2.html"];
 
-
-/*    
-window.onload = function(){
-    loadTransitions([load1, load2, load3],3000);
-}
-var loadTransitions = function loadTransitions(functions){
-    for(var i = 0; i < functions.length; i++){
-        setTimeout(functions[i],timeout);
-    }
-}
-
-*/
-setTimeout(load1, 500);
-setTimeout(load2, 3500);
-setTimeout(load3, 6500);
-
- 
 
 var dispHP =  function dispHP(){
     playerHP.innerHTML = "Player HP <br>" + "<div class='hp-number'>" + PlayHP + "</div>";
     monsterHP.innerHTML= "Rabbit HP <br>" + "<div class='hp-number'>" + MonstHP + "</div>";
 }
 
+ /*  
+setTimeout(load1, 500);
+setTimeout(load2, 3500);
+setTimeout(load3, 6500);
+*/
+
+var transitionTime = 3000;
+var currentTimeout = null;
+var currentFunction = load1;
+
 var load1 = function load1(){
     cave.play();
     text.innerHTML = storyItems[0];
     storyImage.innerHTML = illustration[0];
+    currentFunction = load2;
+    currentTimeout = setTimeout(load2, transitionTime);
 }
 
 function load2(){
@@ -65,6 +60,8 @@ function load2(){
     footsteps.play();
     text.innerHTML = storyItems[1];
     storyImage.innerHTML = illustration[1];
+    currentFunction = load3;
+    currentTimeout = setTimeout(load3, transitionTime);
 }
 
 function load3(){
@@ -75,4 +72,14 @@ function load3(){
     runButton.classList.toggle("toggleon");
     hpBox.classList.toggle("toggleon");
     dispHP();
+    currentFunction = null;
 }
+
+currentTimeout = setTimeout(load1, 0);
+
+window.addEventListener("click", function() {
+    if (currentTimeout != null && currentFunction != null) {
+        clearTimeout(currentTimeout);
+        currentFunction();
+    }
+});
